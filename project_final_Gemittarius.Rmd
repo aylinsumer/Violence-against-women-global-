@@ -6,19 +6,6 @@ output:
   html_document: default
   pdf_document: default
 ---
- 
-*	Actions taken (data importing, cleaning, reshaping, exploring, visualizing etc) along with results
-*	Results and Discussion
-*	Conclusion
-* Please provide url address of your project deployed at `GitHub` pages.
-*	References
-
-
-Project final report should be prepared collaboratively. 
-
-**Cautionary notes**: 
-1) Project interim reports will not be accepted after deadline. 
-2) You should download `R Project` on `GitHub` to your local computer, do the changes as needed, delete all the files you have not used to produce your proposal, then render the `.Rmd` file to `.pdf` (or `.html` output) and finally commit and push all the required files (including `.Rmd` files) by June 21, 2021  23:59 via [GitHub Classroom of MAT381E organization](https://github.com/MAT381E).
 
 \newpage
 ##  
@@ -31,12 +18,15 @@ Project final report should be prepared collaboratively.
 
 ## Aylin Sümer 090160324  
 
+[GitHub](https://github.com/aylinsumer/Violence-against-women-global-)
+
 ##Tuğrulgazi Avat 090160344  
 
+[GitHub]()
 
 
- \newpage  
-
+\newpage  
+---
 ##  
  
   Violence against women is a problem that should be perceived not only locally but also globally. The UN describes violence against women and girls (VAWG) as: “ one of the most widespread, persistent, and devastating human rights violations in our world today. It remains largely unreported due to the impunity, silence, stigma, and shame surrounding it.”
@@ -422,7 +412,7 @@ print(Turkey_Employment)
 ```
 ###Female responders, Peru, classified by: Employement  
 
-```{recho=FALSE}
+```{r,echo=FALSE}
   Female_Employment %>%
   filter(Country=="Peru")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
