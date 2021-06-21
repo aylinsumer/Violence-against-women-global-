@@ -3,7 +3,7 @@ Violence Against Women (Global)
 author: Gemittarius
 date: 21.06.2021
 autosize: true
-font-family: 'Adobe Hebrew Bold Italic'
+font-family: 'Adobe Hebrew Bold Italic' 
 transition: zoom
 
 Team Members
@@ -11,9 +11,9 @@ Team Members
 
 
 
-- Aylin Sümer 090160324
+- Aylin Sumer 090160324
 
-- Tuğrulgazi Avat 090160324
+- Tugrulgazi Avat 090160344
 
 
 Violence...
@@ -23,7 +23,7 @@ Violence...
  
   The UN describes violence against women and girls (VAWG) as: 
  
-  “One of the most widespread, persistent, and devastating human rights violations in our world today. It remains largely unreported due to the impunity, silence, stigma, and shame surrounding it.”
+  "One of the most widespread, persistent, and devastating human rights violations in our world today. It remains largely unreported due to the impunity, silence, stigma, and shame surrounding it."
  
  
 Our Data
@@ -359,22 +359,16 @@ Female Participants - Employment
 Female Participants - Employment 2
 ======================================================== 
 title: False
-```{recho=FALSE}
-  Female_Employment %>%
-  filter(Country=="Peru")%>%
-  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
-  geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
-```
-***
 ![plot of chunk unnamed-chunk-35](project_presentation_Gemittarius-figure/unnamed-chunk-35-1.png)
+***
+![plot of chunk unnamed-chunk-36](project_presentation_Gemittarius-figure/unnamed-chunk-36-1.png)
 
 Female Participants - Employment 3
 ======================================================== 
 title: False
-![plot of chunk unnamed-chunk-36](project_presentation_Gemittarius-figure/unnamed-chunk-36-1.png)
-***
 ![plot of chunk unnamed-chunk-37](project_presentation_Gemittarius-figure/unnamed-chunk-37-1.png)
+***
+![plot of chunk unnamed-chunk-38](project_presentation_Gemittarius-figure/unnamed-chunk-38-1.png)
 
 Female Participants - Employment 4
 ======================================================== 
@@ -386,24 +380,24 @@ title: False
 Female Participants - Marital Status
 ======================================================== 
 
-![plot of chunk unnamed-chunk-38](project_presentation_Gemittarius-figure/unnamed-chunk-38-1.png)
-***
 ![plot of chunk unnamed-chunk-39](project_presentation_Gemittarius-figure/unnamed-chunk-39-1.png)
+***
+![plot of chunk unnamed-chunk-40](project_presentation_Gemittarius-figure/unnamed-chunk-40-1.png)
 
 Female Participants - Marital Status 2
 ======================================================== 
 title: False
-![plot of chunk unnamed-chunk-40](project_presentation_Gemittarius-figure/unnamed-chunk-40-1.png)
-***
 ![plot of chunk unnamed-chunk-41](project_presentation_Gemittarius-figure/unnamed-chunk-41-1.png)
+***
+![plot of chunk unnamed-chunk-42](project_presentation_Gemittarius-figure/unnamed-chunk-42-1.png)
 
 
 Female Participants - Marital Status 3
 ======================================================== 
 title: False
-![plot of chunk unnamed-chunk-42](project_presentation_Gemittarius-figure/unnamed-chunk-42-1.png)
-***
 ![plot of chunk unnamed-chunk-43](project_presentation_Gemittarius-figure/unnamed-chunk-43-1.png)
+***
+![plot of chunk unnamed-chunk-44](project_presentation_Gemittarius-figure/unnamed-chunk-44-1.png)
 
 Female Participants - Marital Status 4
 ======================================================== 
@@ -417,24 +411,24 @@ title: False
 
 Female Participants - Residence
 ======================================================== 
-![plot of chunk unnamed-chunk-44](project_presentation_Gemittarius-figure/unnamed-chunk-44-1.png)
-***
 ![plot of chunk unnamed-chunk-45](project_presentation_Gemittarius-figure/unnamed-chunk-45-1.png)
+***
+![plot of chunk unnamed-chunk-46](project_presentation_Gemittarius-figure/unnamed-chunk-46-1.png)
 
 Female Participants - Residence 2
 ======================================================== 
 title:False
-![plot of chunk unnamed-chunk-46](project_presentation_Gemittarius-figure/unnamed-chunk-46-1.png)
-***
 ![plot of chunk unnamed-chunk-47](project_presentation_Gemittarius-figure/unnamed-chunk-47-1.png)
+***
+![plot of chunk unnamed-chunk-48](project_presentation_Gemittarius-figure/unnamed-chunk-48-1.png)
 
 
 Female Participants - Residence 3
 ======================================================== 
 title: False
-![plot of chunk unnamed-chunk-48](project_presentation_Gemittarius-figure/unnamed-chunk-48-1.png)
-***
 ![plot of chunk unnamed-chunk-49](project_presentation_Gemittarius-figure/unnamed-chunk-49-1.png)
+***
+![plot of chunk unnamed-chunk-50](project_presentation_Gemittarius-figure/unnamed-chunk-50-1.png)
   
 Female Participants - Residence 4
 ======================================================== 
@@ -447,33 +441,38 @@ title: False
 Male Participants
 ======================================================== 
   We see in our data that Turkey, Turkmenistan, Yemen, Tajikistan,Peru, Philippines, Nicaragua, Morocco, Eritrea, Egypt and Bolivia has no information(NA values).
+  
   There is no specific information in the data dictionary, whether male participants were not asked those questions or they did not answer.
+  
   Because of that, We can not use the male participants in Turkey. We will continue in Turkey with female participants.
+
   Congo Democratic Republic, Chad, Afghanistan are still the three of the most valued countries.
+
   And also Dominican Republic, , Colombia, Guatemala (In female data there was Peru) are the three of the least valued countries.
+
   Now on, we will discuss about the three most, the three least and Turkey graphs.
 
 Male Participants - Age
 ======================================================== 
 
-![plot of chunk unnamed-chunk-50](project_presentation_Gemittarius-figure/unnamed-chunk-50-1.png)
-***
 ![plot of chunk unnamed-chunk-51](project_presentation_Gemittarius-figure/unnamed-chunk-51-1.png)
+***
+![plot of chunk unnamed-chunk-52](project_presentation_Gemittarius-figure/unnamed-chunk-52-1.png)
 
 Male Participants - Age 2
 ======================================================== 
 title:False
-![plot of chunk unnamed-chunk-52](project_presentation_Gemittarius-figure/unnamed-chunk-52-1.png)
-***
 ![plot of chunk unnamed-chunk-53](project_presentation_Gemittarius-figure/unnamed-chunk-53-1.png)
+***
+![plot of chunk unnamed-chunk-54](project_presentation_Gemittarius-figure/unnamed-chunk-54-1.png)
 
 
 Male Participants - Age 3
 ======================================================== 
 title: False
-![plot of chunk unnamed-chunk-54](project_presentation_Gemittarius-figure/unnamed-chunk-54-1.png)
-***
 ![plot of chunk unnamed-chunk-55](project_presentation_Gemittarius-figure/unnamed-chunk-55-1.png)
+***
+![plot of chunk unnamed-chunk-56](project_presentation_Gemittarius-figure/unnamed-chunk-56-1.png)
 
 Male Participants - Age 4
 ======================================================== 
@@ -486,23 +485,23 @@ title: False
 Male Participants - Education
 ======================================================== 
 
-![plot of chunk unnamed-chunk-56](project_presentation_Gemittarius-figure/unnamed-chunk-56-1.png)
 ![plot of chunk unnamed-chunk-57](project_presentation_Gemittarius-figure/unnamed-chunk-57-1.png)
+![plot of chunk unnamed-chunk-58](project_presentation_Gemittarius-figure/unnamed-chunk-58-1.png)
 
 Male Participants - Education 2
 ======================================================== 
 title:False
-![plot of chunk unnamed-chunk-58](project_presentation_Gemittarius-figure/unnamed-chunk-58-1.png)
-***
 ![plot of chunk unnamed-chunk-59](project_presentation_Gemittarius-figure/unnamed-chunk-59-1.png)
+***
+![plot of chunk unnamed-chunk-60](project_presentation_Gemittarius-figure/unnamed-chunk-60-1.png)
 
 
 Male Participants - Education 3
 ======================================================== 
 title:False
-![plot of chunk unnamed-chunk-60](project_presentation_Gemittarius-figure/unnamed-chunk-60-1.png)
-***
 ![plot of chunk unnamed-chunk-61](project_presentation_Gemittarius-figure/unnamed-chunk-61-1.png)
+***
+![plot of chunk unnamed-chunk-62](project_presentation_Gemittarius-figure/unnamed-chunk-62-1.png)
 
 
 Male Participants - Education 4
@@ -517,24 +516,24 @@ title:False
 
 Male Participants - Employment
 ======================================================== 
-![plot of chunk unnamed-chunk-62](project_presentation_Gemittarius-figure/unnamed-chunk-62-1.png)
-***
 ![plot of chunk unnamed-chunk-63](project_presentation_Gemittarius-figure/unnamed-chunk-63-1.png)
+***
+![plot of chunk unnamed-chunk-64](project_presentation_Gemittarius-figure/unnamed-chunk-64-1.png)
 
 Male Participants - Employment 2
 ======================================================== 
 title: False
-![plot of chunk unnamed-chunk-64](project_presentation_Gemittarius-figure/unnamed-chunk-64-1.png)
-***
 ![plot of chunk unnamed-chunk-65](project_presentation_Gemittarius-figure/unnamed-chunk-65-1.png)
+***
+![plot of chunk unnamed-chunk-66](project_presentation_Gemittarius-figure/unnamed-chunk-66-1.png)
 
 
 Male Participants - Employment 3
 ======================================================== 
 title:False
-![plot of chunk unnamed-chunk-66](project_presentation_Gemittarius-figure/unnamed-chunk-66-1.png)
-***
 ![plot of chunk unnamed-chunk-67](project_presentation_Gemittarius-figure/unnamed-chunk-67-1.png)
+***
+![plot of chunk unnamed-chunk-68](project_presentation_Gemittarius-figure/unnamed-chunk-68-1.png)
 
 
 Male Participants - Employment 4
@@ -551,23 +550,23 @@ title:False
 
 Male Participants - Marital Status
 ======================================================== 
-![plot of chunk unnamed-chunk-68](project_presentation_Gemittarius-figure/unnamed-chunk-68-1.png)
-***
 ![plot of chunk unnamed-chunk-69](project_presentation_Gemittarius-figure/unnamed-chunk-69-1.png)
+***
+![plot of chunk unnamed-chunk-70](project_presentation_Gemittarius-figure/unnamed-chunk-70-1.png)
 
 Male Participants - Marital Status 2
 ======================================================== 
 title:False
-![plot of chunk unnamed-chunk-70](project_presentation_Gemittarius-figure/unnamed-chunk-70-1.png)
-***
 ![plot of chunk unnamed-chunk-71](project_presentation_Gemittarius-figure/unnamed-chunk-71-1.png)
+***
+![plot of chunk unnamed-chunk-72](project_presentation_Gemittarius-figure/unnamed-chunk-72-1.png)
 
 Male Participants - Marital Status 3
 ======================================================== 
 title: False
-![plot of chunk unnamed-chunk-72](project_presentation_Gemittarius-figure/unnamed-chunk-72-1.png)
-***
 ![plot of chunk unnamed-chunk-73](project_presentation_Gemittarius-figure/unnamed-chunk-73-1.png)
+***
+![plot of chunk unnamed-chunk-74](project_presentation_Gemittarius-figure/unnamed-chunk-74-1.png)
 
 Male Participants - Marital Status 4
 ======================================================== 
@@ -586,24 +585,24 @@ title: False
 Male Participants - Residence
 ======================================================== 
 
-![plot of chunk unnamed-chunk-74](project_presentation_Gemittarius-figure/unnamed-chunk-74-1.png)
-***
 ![plot of chunk unnamed-chunk-75](project_presentation_Gemittarius-figure/unnamed-chunk-75-1.png)
+***
+![plot of chunk unnamed-chunk-76](project_presentation_Gemittarius-figure/unnamed-chunk-76-1.png)
 
 Male Participants - Residence 2
 ======================================================== 
 title:False
-![plot of chunk unnamed-chunk-76](project_presentation_Gemittarius-figure/unnamed-chunk-76-1.png)
-***
 ![plot of chunk unnamed-chunk-77](project_presentation_Gemittarius-figure/unnamed-chunk-77-1.png)
+***
+![plot of chunk unnamed-chunk-78](project_presentation_Gemittarius-figure/unnamed-chunk-78-1.png)
 
 
 Male Participants - Residence 3
 ======================================================== 
 title:False
-![plot of chunk unnamed-chunk-78](project_presentation_Gemittarius-figure/unnamed-chunk-78-1.png)
-***
 ![plot of chunk unnamed-chunk-79](project_presentation_Gemittarius-figure/unnamed-chunk-79-1.png)
+***
+![plot of chunk unnamed-chunk-80](project_presentation_Gemittarius-figure/unnamed-chunk-80-1.png)
 
 Take A Deep Breath Now.
 ======================================================== 
@@ -617,9 +616,9 @@ Take A Deep Breath Now.
 
 Female Participants - Turkey -Age/Education
 ======================================================== 
-![plot of chunk unnamed-chunk-80](project_presentation_Gemittarius-figure/unnamed-chunk-80-1.png)
-***
 ![plot of chunk unnamed-chunk-81](project_presentation_Gemittarius-figure/unnamed-chunk-81-1.png)
+***
+![plot of chunk unnamed-chunk-82](project_presentation_Gemittarius-figure/unnamed-chunk-82-1.png)
 
 Female Participants - Turkey - Age/Education 2
 ======================================================== 
@@ -639,9 +638,9 @@ Education:
 
 Female Participants - Turkey -Employement/Marital Status
 ======================================================== 
-![plot of chunk unnamed-chunk-82](project_presentation_Gemittarius-figure/unnamed-chunk-82-1.png)
-***
 ![plot of chunk unnamed-chunk-83](project_presentation_Gemittarius-figure/unnamed-chunk-83-1.png)
+***
+![plot of chunk unnamed-chunk-84](project_presentation_Gemittarius-figure/unnamed-chunk-84-1.png)
 
 
 Female Participants - Turkey -Employment/Marital Status 2
@@ -654,7 +653,7 @@ Marital Status:
 
 Female Participants - Turkey - Residence
 ======================================================== 
-![plot of chunk unnamed-chunk-84](project_presentation_Gemittarius-figure/unnamed-chunk-84-1.png)
+![plot of chunk unnamed-chunk-85](project_presentation_Gemittarius-figure/unnamed-chunk-85-1.png)
 
 Female Participants - Turkey - Residence 2
 ======================================================== 
@@ -671,7 +670,7 @@ Turkey
 ======================================================== 
 title: False
 
-- Femicides, which means the gender-based murder of a woman by a man, had increased by 1400 percent from 2002 to 2009 and that while 66 women were killed in 2002, this number reached 953 in the first 7 months of 2009. [See link](https://www.ntv.com.tr/yasam/kadin-cinayetleri-yuzde-1400-artis-gosterdi,8aPXnckeN0aWmKBDjlezJw)
+- Femicides, which mean the gender-based murder of a woman by a man, had increased by 1400 percent from 2002 to 2009 and that while 66 women were killed in 2002, this number reached 953 in the first 7 months of 2009. [See link](https://www.ntv.com.tr/yasam/kadin-cinayetleri-yuzde-1400-artis-gosterdi,8aPXnckeN0aWmKBDjlezJw)
 
 Turkey 2
 ======================================================== 
@@ -679,21 +678,22 @@ title: False
 
 - If we consider the year 2018, it is worse than 2020. 440 women were killed and 317 women were subjected to sexual violence.
 
-![plot of chunk unnamed-chunk-85](project_presentation_Gemittarius-figure/unnamed-chunk-85-1.png)
-***
 ![plot of chunk unnamed-chunk-86](project_presentation_Gemittarius-figure/unnamed-chunk-86-1.png)
+***
+![plot of chunk unnamed-chunk-87](project_presentation_Gemittarius-figure/unnamed-chunk-87-1.png)
 
 Turkey 2
 ======================================================== 
 title: False
 
-![plot of chunk unnamed-chunk-87](project_presentation_Gemittarius-figure/unnamed-chunk-87-1.png)
+![plot of chunk unnamed-chunk-88](project_presentation_Gemittarius-figure/unnamed-chunk-88-1.png)
 ***
 There is a very serious increase in the number of suspicious female deaths presented as suicide or natural death and the number of women who are found dead suspiciously with the pandemic process. It is necessary to reveal whether women were killed, whether they were killed by accident, whether women were killed on the basis of gender (whether it was femicide), whether they committed suicide or were driven to suicide.
 
 
 References
 ======================================================== 
+
 [Survey](https://data.world/login?next=%2Fmakeovermonday%2F2020w10%2Fworkspace%2Ffile%3Ffilename%3D20200306%2BData%2BInternational%2BWomen%2527s%2BDay%2BViz5%2BLaunch.csv)
 
 [NTV Yaşam - Kadın Cinayetleri](https://www.ntv.com.tr/yasam/kadin-cinayetleri-yuzde-1400-artis-gosterdi,8aPXnckeN0aWmKBDjlezJw)

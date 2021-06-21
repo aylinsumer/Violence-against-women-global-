@@ -22,7 +22,7 @@ output:
 
 ##Tuğrulgazi Avat 090160344  
 
-[GitHub]()
+[GitHub](https://github.com/tugrulgazi/MAT381-TugrulgaziAvat.git)
 
 
 \newpage  

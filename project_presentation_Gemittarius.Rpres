@@ -3,7 +3,7 @@ Violence Against Women (Global)
 author: Gemittarius
 date: 21.06.2021
 autosize: true
-font-family: 'Adobe Hebrew Bold Italic'
+font-family: 'Adobe Hebrew Bold Italic' 
 transition: zoom
 
 Team Members
@@ -11,9 +11,9 @@ Team Members
 
 
 
-- Aylin Sümer 090160324
+- Aylin Sumer 090160324
 
-- Tuğrulgazi Avat 090160324
+- Tugrulgazi Avat 090160344
 
 
 Violence...
@@ -23,7 +23,7 @@ Violence...
  
   The UN describes violence against women and girls (VAWG) as: 
  
-  “One of the most widespread, persistent, and devastating human rights violations in our world today. It remains largely unreported due to the impunity, silence, stigma, and shame surrounding it.”
+  "One of the most widespread, persistent, and devastating human rights violations in our world today. It remains largely unreported due to the impunity, silence, stigma, and shame surrounding it."
  
  
 Our Data
@@ -242,56 +242,62 @@ What Does the Value Column Mean?
   
 Female Participants - Age
 ======================================================== 
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 10,echo=FALSE}
   Female_age %>%
   filter(Country=="Colombia")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 ***
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 10,echo=FALSE}
   Female_age %>%
   filter(Country=="Dominican Republic")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 Female Participants - Age 2
 ======================================================== 
 title: False
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 10,echo=FALSE}
   Female_age %>%
   filter(Country=="Peru")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 ***
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 10,echo=FALSE}
   Female_age %>%
   filter(Country=="Congo Democratic Republic")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 Female Participants - Age 3
 ======================================================== 
 title: False
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 10,echo=FALSE}
   Female_age %>%
   filter(Country=="Chad")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 ***
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 10,echo=FALSE}
   Female_age %>%
   filter(Country=="Afghanistan")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 Female Participants - Age 4
 ======================================================== 
@@ -304,57 +310,63 @@ title: False
 Female Participants - Education
 ======================================================== 
 
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 10,echo=FALSE}
   Female_education %>%
   filter(Country=="Colombia")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 ***
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 10,echo=FALSE}
   Female_education %>%
   filter(Country=="Dominican Republic")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 Female Participants - Education 2
 ======================================================== 
 title: False
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Female_education %>%
   filter(Country=="Peru")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 ***
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Female_education %>%
   filter(Country=="Congo Democratic Republic")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 
 Female Participants - Education 3
 ======================================================== 
 title: False
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Female_education %>%
   filter(Country=="Chad")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 ***
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Female_education %>%
   filter(Country=="Afghanistan")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 
 Female Participants - Education 4
@@ -371,57 +383,63 @@ title: False
 
 Female Participants - Employment
 ======================================================== 
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Female_Employment %>%
   filter(Country=="Colombia")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 ***
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Female_Employment %>%
   filter(Country=="Dominican Republic")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 Female Participants - Employment 2
 ======================================================== 
 title: False
-```{recho=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Female_Employment %>%
   filter(Country=="Peru")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 ***
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Female_Employment %>%
   filter(Country=="Congo Democratic Republic")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 
 Female Participants - Employment 3
 ======================================================== 
 title: False
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Female_Employment %>%
   filter(Country=="Chad")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 ***
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Female_Employment %>%
   filter(Country=="Afghanistan")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 
 Female Participants - Employment 4
@@ -434,59 +452,65 @@ title: False
 Female Participants - Marital Status
 ======================================================== 
 
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Female_Marital %>%
   filter(Country=="Colombia")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 ***
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Female_Marital %>%
   filter(Country=="Dominican Republic")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 
 Female Participants - Marital Status 2
 ======================================================== 
 title: False
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Female_Marital %>%
   filter(Country=="Peru")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 ***
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Female_Marital %>%
   filter(Country=="Congo Democratic Republic")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 
 
 Female Participants - Marital Status 3
 ======================================================== 
 title: False
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Female_Marital %>%
   filter(Country=="Chad")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 ***
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Female_Marital %>%
   filter(Country=="Afghanistan")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 
 Female Participants - Marital Status 4
@@ -501,59 +525,65 @@ title: False
 
 Female Participants - Residence
 ======================================================== 
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Female_Residence %>%
   filter(Country=="Colombia")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 ***
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Female_Residence %>%
   filter(Country=="Dominican Republic")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 
 Female Participants - Residence 2
 ======================================================== 
 title:False
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
 Female_Residence %>%
   filter(Country=="Peru")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 ***
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Female_Residence %>%
   filter(Country=="Congo Democratic Republic")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 
 
 Female Participants - Residence 3
 ======================================================== 
 title: False
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Female_Residence %>%
   filter(Country=="Chad")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 ***
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Female_Residence %>%
   filter(Country=="Afghanistan")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
   
 Female Participants - Residence 4
@@ -567,68 +597,79 @@ title: False
 Male Participants
 ======================================================== 
   We see in our data that Turkey, Turkmenistan, Yemen, Tajikistan,Peru, Philippines, Nicaragua, Morocco, Eritrea, Egypt and Bolivia has no information(NA values).
+  
   There is no specific information in the data dictionary, whether male participants were not asked those questions or they did not answer.
+  
   Because of that, We can not use the male participants in Turkey. We will continue in Turkey with female participants.
+
   Congo Democratic Republic, Chad, Afghanistan are still the three of the most valued countries.
+
   And also Dominican Republic, , Colombia, Guatemala (In female data there was Peru) are the three of the least valued countries.
+
   Now on, we will discuss about the three most, the three least and Turkey graphs.
 
 Male Participants - Age
 ======================================================== 
 
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Male_age %>%
   filter(Country=="Colombia")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 ***
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Male_age %>%
   filter(Country=="Dominican Republic")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 
 Male Participants - Age 2
 ======================================================== 
 title:False
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Male_age %>%
   filter(Country=="Guatemala")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 ***
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Male_age %>%
   filter(Country=="Congo Democratic Republic")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 
 
 Male Participants - Age 3
 ======================================================== 
 title: False
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Male_age %>%
   filter(Country=="Chad")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 ***
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Male_age %>%
   filter(Country=="Afghanistan")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 
 Male Participants - Age 4
@@ -642,58 +683,64 @@ title: False
 Male Participants - Education
 ======================================================== 
 
-```{r,echo=FALSE}
+```{r,fig.width=10,fig.height = 10,echo=FALSE}
   Male_education %>%
   filter(Country=="Colombia")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
-```{r,echo=FALSE}
+```{r,fig.width=10,fig.height = 10,echo=FALSE}
   Male_education %>%
   filter(Country=="Dominican Republic")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 
 Male Participants - Education 2
 ======================================================== 
 title:False
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Male_education %>%
   filter(Country=="Guatemala")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 ***
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Male_education %>%
   filter(Country=="Congo Democratic Republic")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 
 
 Male Participants - Education 3
 ======================================================== 
 title:False
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Male_education %>%
   filter(Country=="Chad")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 ***
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Male_education %>%
   filter(Country=="Afghanistan")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 
 
@@ -709,59 +756,65 @@ title:False
 
 Male Participants - Employment
 ======================================================== 
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Male_Employment %>%
   filter(Country=="Colombia")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 ***
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Male_Employment %>%
   filter(Country=="Dominican Republic")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 
 Male Participants - Employment 2
 ======================================================== 
 title: False
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Male_Employment %>%
   filter(Country=="Guatemala")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 ***
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Male_Employment %>%
   filter(Country=="Congo Democratic Republic")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 
 
 Male Participants - Employment 3
 ======================================================== 
 title:False
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Male_Employment %>%
   filter(Country=="Chad")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 ***
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Male_Employment %>%
   filter(Country=="Afghanistan")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 
 
@@ -779,58 +832,64 @@ title:False
 
 Male Participants - Marital Status
 ======================================================== 
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Male_Marital %>%
   filter(Country=="Colombia")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 ***
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Male_Marital %>%
   filter(Country=="Dominican Republic")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 
 Male Participants - Marital Status 2
 ======================================================== 
 title:False
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Male_Marital %>%
   filter(Country=="Guatemala")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 ***
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Male_Marital %>%
   filter(Country=="Congo Democratic Republic")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 
 Male Participants - Marital Status 3
 ======================================================== 
 title: False
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Male_Marital %>%
   filter(Country=="Chad")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 ***
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Male_Marital %>%
   filter(Country=="Afghanistan")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 
 Male Participants - Marital Status 4
@@ -850,59 +909,67 @@ title: False
 Male Participants - Residence
 ======================================================== 
 
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Male_Residence %>%
   filter(Country=="Colombia")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 ***
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Male_Residence %>%
   filter(Country=="Dominican Republic")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 
 Male Participants - Residence 2
 ======================================================== 
 title:False
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Male_Residence %>%
   filter(Country=="Guatemala")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 ***
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Male_Residence %>%
   filter(Country=="Congo Democratic Republic")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 
 
 Male Participants - Residence 3
 ======================================================== 
 title:False
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Male_Residence %>%
   filter(Country=="Chad")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  theme(text=element_text(size=20))+
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 ***
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Male_Residence %>%
   filter(Country=="Afghanistan")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  theme(text=element_text(size=20))+
+  coord_flip()+
+  theme(text=element_text(size=20))
 ```
 
 Take A Deep Breath Now.
@@ -917,21 +984,25 @@ Take A Deep Breath Now.
 
 Female Participants - Turkey -Age/Education
 ======================================================== 
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
  Turkey_age<- Female_age %>%
   filter(Country=="Turkey")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  theme(text=element_text(size=20))+
+  coord_flip()+
+  theme(text=element_text(size=20))
   print(Turkey_age)
 ```
 ***
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Turkey_Education<-Female_education %>%
   filter(Country=="Turkey")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  theme(text=element_text(size=20))+
+  coord_flip()+
+  theme(text=element_text(size=20))
   print(Turkey_Education)
 ```
 
@@ -953,21 +1024,23 @@ Education:
 
 Female Participants - Turkey -Employement/Marital Status
 ======================================================== 
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
  Turkey_Employment<- Female_Employment %>%
   filter(Country=="Turkey")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
   print(Turkey_Employment)
 ```
 ***
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 15,echo=FALSE}
   Turkey_Marital<-Female_Marital %>%
   filter(Country=="Turkey")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
   print(Turkey_Marital)
 ```
 
@@ -982,12 +1055,13 @@ Marital Status:
 
 Female Participants - Turkey - Residence
 ======================================================== 
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 10,echo=FALSE}
  Turkey_Residence<- Female_Residence %>%
   filter(Country=="Turkey")%>%
   ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
   geom_bar(position="dodge", stat = "Identity")+
-  coord_flip()
+  coord_flip()+
+  theme(text=element_text(size=20))
   print(Turkey_Residence)
 ```
 
@@ -1006,7 +1080,7 @@ Turkey
 ======================================================== 
 title: False
 
-- Femicides, which means the gender-based murder of a woman by a man, had increased by 1400 percent from 2002 to 2009 and that while 66 women were killed in 2002, this number reached 953 in the first 7 months of 2009. [See link](https://www.ntv.com.tr/yasam/kadin-cinayetleri-yuzde-1400-artis-gosterdi,8aPXnckeN0aWmKBDjlezJw)
+- Femicides, which mean the gender-based murder of a woman by a man, had increased by 1400 percent from 2002 to 2009 and that while 66 women were killed in 2002, this number reached 953 in the first 7 months of 2009. [See link](https://www.ntv.com.tr/yasam/kadin-cinayetleri-yuzde-1400-artis-gosterdi,8aPXnckeN0aWmKBDjlezJw)
 
 Turkey 2
 ======================================================== 
@@ -1025,10 +1099,10 @@ df %>%
   geom_bar(position="dodge", stat = "Identity", fill="#f68060")+
   coord_flip()+
   labs(y="Numbers of female were killed by her --",x=" ",title="Who?")+
-  theme(panel.background = element_blank())
+  theme(text=element_text(size=25),panel.background = element_blank())
 ```
 ***
-```{r,echo=FALSE}
+```{r,fig.width=10,fig.height=10,echo=FALSE}
 type <- c("Home","Middle of the street","Workplace","Terrain","Car","Hotel","Isolated place","Wood store","Hairdresser")
 values <- c(181,48,15,14,11,5,4,1,1)
 df <- tibble(type,values)
@@ -1039,14 +1113,14 @@ df %>%
   geom_bar(position="dodge", stat = "Identity", fill="red4")+
   coord_flip()+
   labs(y="Numbers of female were killed in --",x=" ",title="Where?")+
-  theme(panel.background = element_blank())
+  theme(text=element_text(size=25),panel.background = element_blank())
 ```
 
 Turkey 2
 ======================================================== 
 title: False
 
-```{r,echo=FALSE}
+```{r,fig.width=15,fig.height = 10,echo=FALSE}
 type <- c("Gun","Cutter","Choking","Beating","Burning","Chemical","Falling from Height")
 values <- c(170,83,26,10,2,1,1)
 df <- tibble(type,values)
@@ -1055,10 +1129,10 @@ df %>%
   ggplot(aes(x=type,y=values,))+
   
   geom_bar(position="dodge", stat = "Identity", fill="black")+
-  geom_text(aes(label=values), vjust=-0.3, size=5)+
-  
+  geom_text(aes(label=values), vjust=-0.3,hjust=-0.5, size=5)+
+  coord_flip()+
   labs(y="Numbers of female were killed with/by --",x=" ",title="How?")+
-  theme(panel.background = element_blank())
+  theme(text=element_text(size=35),panel.background = element_blank())
 ```
 ***
 There is a very serious increase in the number of suspicious female deaths presented as suicide or natural death and the number of women who are found dead suspiciously with the pandemic process. It is necessary to reveal whether women were killed, whether they were killed by accident, whether women were killed on the basis of gender (whether it was femicide), whether they committed suicide or were driven to suicide.
@@ -1066,6 +1140,7 @@ There is a very serious increase in the number of suspicious female deaths prese
 
 References
 ======================================================== 
+
 [Survey](https://data.world/login?next=%2Fmakeovermonday%2F2020w10%2Fworkspace%2Ffile%3Ffilename%3D20200306%2BData%2BInternational%2BWomen%2527s%2BDay%2BViz5%2BLaunch.csv)
 
 [NTV Yaşam - Kadın Cinayetleri](https://www.ntv.com.tr/yasam/kadin-cinayetleri-yuzde-1400-artis-gosterdi,8aPXnckeN0aWmKBDjlezJw)
