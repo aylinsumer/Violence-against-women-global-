@@ -1,0 +1,1073 @@
+Violence Against Women (Global)
+========================================================
+author: Gemittarius
+date: 21.06.2021
+autosize: true
+font-family: 'Adobe Hebrew Bold Italic'
+transition: zoom
+
+Team Members
+========================================================
+
+
+
+- Aylin Sümer 090160324
+
+- Tuğrulgazi Avat 090160324
+
+
+Violence...
+========================================================
+
+  Violence against women is a problem that should be perceived not only locally but also globally. 
+ 
+  The UN describes violence against women and girls (VAWG) as: 
+ 
+  “One of the most widespread, persistent, and devastating human rights violations in our world today. It remains largely unreported due to the impunity, silence, stigma, and shame surrounding it.”
+ 
+ 
+Our Data
+========================================================
+
+  The data was taken from a survey of men and women in African, Asian, and South American countries, exploring the attitudes and perceived justifications given for committing acts of violence against women.
+ 
+What will be done?
+========================================================
+
+  In this research both subjects and the objects of the violence are included. 
+  
+  The data also explores different sociodemographic groups that the respondents belong to, including: Education Level, Marital status, Employment, and Age group. 
+  
+  The data reveals insights into some of the attitudes and assumptions that prevent progress in the global campaign to end violence against women and girls, based on a representative sample of each country.
+  
+Goals
+========================================================
+   
+  Our main purpose is to show that violence against women and girls is never acceptable or justifiable by demonstrating both numerical and categorical variables. 
+  
+  We will be analyzing the percentages of people surveyed in the relevant group who agree with the question.
+
+
+Let's Get Started!
+======================================================== 
+
+  
+```{r,warning=FALSE,message=FALSE,echo=FALSE}
+library(tidyverse)
+library(readxl)
+library(dplyr)
+library(readr)
+library(patchwork)
+```
+First of all, We need to see our data. Let us see our main columns:
+
+```{r, echo=FALSE}
+Int_women_day <- read.csv("Int_women_day.csv")
+colnames(Int_women_day)
+```
+
+
+Continue 1 
+======================================================== 
+title: False
+
+  Our data has a column named as Demographics.Question which gives us the 5 cases that we are going to analyze in the future. 
+  Look at the Demographics.Question "Age".
+
+```{r, echo=FALSE}
+Int_women_day %>%
+  filter(Demographics.Question == "Age") %>%
+head(8)
+```
+
+
+Continue 2 
+======================================================== 
+title: False
+
+
+  We can see that age is repeating itself by the change in the response of our basic question.
+  
+  Our Age interval is below.
+  
+  
+```{r,echo=FALSE}
+Int_women_day %>%
+  filter(Demographics.Question == "Age") %>%
+  count(Demographics.Response)%>%
+print()
+```
+
+
+Continue 3 
+======================================================== 
+title: False
+
+  And our Questions are;
+
+```{r,echo=FALSE}
+Int_women_day %>%
+  count(Question)%>%
+  print()
+```
+
+
+Continue 4 
+======================================================== 
+title: False
+
+  So, we see that we have exactly 6 different answer, and 3 different age group.
+  
+  Let us see how many different demographics question we have.
+
+```{r,echo=FALSE}
+Int_women_day %>%
+  count(Demographics.Question) %>%
+  print()
+```
+
+Countries We are Working With
+======================================================== 
+
+```{r, echo=FALSE}
+country_list<-unique(Int_women_day$Country)
+head(country_list,33)
+```
+ 
+Countries We are Working With
+======================================================== 
+
+```{r, echo=FALSE}
+country_list<-unique(Int_women_day$Country)
+tail(country_list,33)
+```
+
+
+Split Data 
+======================================================== 
+
+  First and most important thing is that we need to make a gender study upon this data. So, We need to split our data into 2, such as the person who answered is female nor male.
+
+  Female data;
+  
+```{r,echo=FALSE}
+data_Female <- filter(Int_women_day, Gender == "F")
+head(data_Female)
+```
+
+Split Data 
+======================================================== 
+  
+  Male data;
+  
+```{r,echo=FALSE}
+data_Male <- filter(Int_women_day, Gender == "M")
+head(data_Male)
+```
+
+  We have 5 different case, so we may actually divide our data through demographics questions.
+  
+  
+For  Male and Female Participants
+======================================================== 
+    
+      
+      
+Female | Age            
+Female | Education      
+Female | Employment     
+Female | Marital Status  
+Female | Residence     
+    
+  ***  
+  
+Male | Age  
+Male | Education  
+Male | Employment  
+Male | Marital Status  
+Male | Residence  
+
+```{r,echo=FALSE}
+  Female_age <- filter(data_Female, Demographics.Question == "Age")
+```
+
+```{r,echo=FALSE}
+  Female_education <- filter(data_Female, Demographics.Question == "Education")
+```
+
+```{r,echo=FALSE}
+  Female_Employment <- filter(data_Female, Demographics.Question == "Employment")
+```
+
+```{r,echo=FALSE}
+  Female_Marital <- filter(data_Female, Demographics.Question == "Marital status")
+```
+
+```{r,echo=FALSE}
+  Female_Residence <- filter(data_Female, Demographics.Question == "Residence")
+```
+
+```{r,echo=FALSE}
+  Male_age <- filter(data_Male, Demographics.Question == "Age")
+```
+
+```{r,echo=FALSE}
+  Male_education <- filter(data_Male, Demographics.Question == "Education")
+```
+
+```{r,echo=FALSE}
+  Male_Employment <- filter(data_Male, Demographics.Question == "Employment")
+```
+
+```{r,echo=FALSE}
+  Male_Marital <- filter(data_Male, Demographics.Question == "Marital status")
+```
+
+```{r,echo=FALSE}
+  Male_Residence <- filter(data_Male, Demographics.Question == "Residence")
+```  
+  
+What Does the Value Column Mean?
+======================================================== 
+  
+  Value column make us understand  that the % of people surveyed in the relevant group who agree with the question. 
+  
+  (e.g. the percentage of women aged 15-24 in Afghanistan who agree that a husband is justified in hitting or beating his wife if she burns the food)
+  
+  We know about our data that Congo Democratic Republic, Chad, Afghanistan are the three of the most valued countries.  
+
+  And also Dominican Republic, Colombia, Peru are the three of the least valued countries. 
+  
+  Now on, we will discuss about the three most, the three least and Turkey graphs.
+  
+Female Participants - Age
+======================================================== 
+```{r,echo=FALSE}
+  Female_age %>%
+  filter(Country=="Colombia")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+***
+```{r,echo=FALSE}
+  Female_age %>%
+  filter(Country=="Dominican Republic")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+Female Participants - Age 2
+======================================================== 
+title: False
+```{r,echo=FALSE}
+  Female_age %>%
+  filter(Country=="Peru")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+***
+```{r,echo=FALSE}
+  Female_age %>%
+  filter(Country=="Congo Democratic Republic")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+Female Participants - Age 3
+======================================================== 
+title: False
+```{r,echo=FALSE}
+  Female_age %>%
+  filter(Country=="Chad")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+***
+```{r,echo=FALSE}
+  Female_age %>%
+  filter(Country=="Afghanistan")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+Female Participants - Age 4
+======================================================== 
+title: False
+
+  First of all, there are really great number of women that justify the violence, for at least one specific reason in those countries...
+
+  You may think that 15-24 ages are the one, valued the least, but some countries that is not the case, for example Uganda, Zimbabwe, in female participants.
+
+Female Participants - Education
+======================================================== 
+
+```{r,echo=FALSE}
+  Female_education %>%
+  filter(Country=="Colombia")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+***
+```{r,echo=FALSE}
+  Female_education %>%
+  filter(Country=="Dominican Republic")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+Female Participants - Education 2
+======================================================== 
+title: False
+```{r,echo=FALSE}
+  Female_education %>%
+  filter(Country=="Peru")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+***
+```{r,echo=FALSE}
+  Female_education %>%
+  filter(Country=="Congo Democratic Republic")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+
+Female Participants - Education 3
+======================================================== 
+title: False
+```{r,echo=FALSE}
+  Female_education %>%
+  filter(Country=="Chad")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+***
+```{r,echo=FALSE}
+  Female_education %>%
+  filter(Country=="Afghanistan")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+
+Female Participants - Education 4
+======================================================== 
+title: False
+  For Female participants, higher education makes the lowest violence fans. 
+  
+  But still, some countries have the smallest different at the values such as Timor-Leste and Chad. 
+  
+  Even they have higher education, still they think about justifying the violence. 
+  
+  For some countries education make almost no difference in the acceptability of violence.
+
+
+Female Participants - Employment
+======================================================== 
+```{r,echo=FALSE}
+  Female_Employment %>%
+  filter(Country=="Colombia")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+***
+```{r,echo=FALSE}
+  Female_Employment %>%
+  filter(Country=="Dominican Republic")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+Female Participants - Employment 2
+======================================================== 
+title: False
+```{recho=FALSE}
+  Female_Employment %>%
+  filter(Country=="Peru")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+***
+```{r,echo=FALSE}
+  Female_Employment %>%
+  filter(Country=="Congo Democratic Republic")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+
+Female Participants - Employment 3
+======================================================== 
+title: False
+```{r,echo=FALSE}
+  Female_Employment %>%
+  filter(Country=="Chad")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+***
+```{r,echo=FALSE}
+  Female_Employment %>%
+  filter(Country=="Afghanistan")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+
+Female Participants - Employment 4
+======================================================== 
+title: False
+
+  Employed for kind and unemployed participants mostly have close opinion about the violence, but mostly participants that employed for kind are the most violent sympathizers. 
+
+
+Female Participants - Marital Status
+======================================================== 
+
+```{r,echo=FALSE}
+  Female_Marital %>%
+  filter(Country=="Colombia")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+***
+```{r,echo=FALSE}
+  Female_Marital %>%
+  filter(Country=="Dominican Republic")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+
+Female Participants - Marital Status 2
+======================================================== 
+title: False
+```{r,echo=FALSE}
+  Female_Marital %>%
+  filter(Country=="Peru")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+***
+```{r,echo=FALSE}
+  Female_Marital %>%
+  filter(Country=="Congo Democratic Republic")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+
+
+Female Participants - Marital Status 3
+======================================================== 
+title: False
+```{r,echo=FALSE}
+  Female_Marital %>%
+  filter(Country=="Chad")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+***
+```{r,echo=FALSE}
+  Female_Marital %>%
+  filter(Country=="Afghanistan")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+
+Female Participants - Marital Status 4
+======================================================== 
+title: False
+
+  For female participants, Malawi, Maldives, Madagaskar, Lesotho, Eswatini, Comoros have the most violence fans in the never been married women. Doesn't it crazy? 
+  
+  Afghanistan and Pakistan have no information about the never married participants' thoughts. 
+
+  Also that, Burundi, Nabia, Rwanda, Philiphines have the most violent divorced/widow women population. And Turkey has a tie with married/living together part of the women vs. divorced/widow women. It sounds about right.
+
+Female Participants - Residence
+======================================================== 
+```{r,echo=FALSE}
+  Female_Residence %>%
+  filter(Country=="Colombia")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+***
+```{r,echo=FALSE}
+  Female_Residence %>%
+  filter(Country=="Dominican Republic")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+
+Female Participants - Residence 2
+======================================================== 
+title:False
+```{r,echo=FALSE}
+Female_Residence %>%
+  filter(Country=="Peru")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+***
+```{r,echo=FALSE}
+  Female_Residence %>%
+  filter(Country=="Congo Democratic Republic")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+
+
+Female Participants - Residence 3
+======================================================== 
+title: False
+```{r,echo=FALSE}
+  Female_Residence %>%
+  filter(Country=="Chad")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+***
+```{r,echo=FALSE}
+  Female_Residence %>%
+  filter(Country=="Afghanistan")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+  
+Female Participants - Residence 4
+======================================================== 
+title: False
+
+  For female participants, always urban residences have the least violence thoughts than the rural residences.
+
+  Well, it looks more normal than our other split data. 
+  
+Male Participants
+======================================================== 
+  We see in our data that Turkey, Turkmenistan, Yemen, Tajikistan,Peru, Philippines, Nicaragua, Morocco, Eritrea, Egypt and Bolivia has no information(NA values).
+  There is no specific information in the data dictionary, whether male participants were not asked those questions or they did not answer.
+  Because of that, We can not use the male participants in Turkey. We will continue in Turkey with female participants.
+  Congo Democratic Republic, Chad, Afghanistan are still the three of the most valued countries.
+  And also Dominican Republic, , Colombia, Guatemala (In female data there was Peru) are the three of the least valued countries.
+  Now on, we will discuss about the three most, the three least and Turkey graphs.
+
+Male Participants - Age
+======================================================== 
+
+```{r,echo=FALSE}
+  Male_age %>%
+  filter(Country=="Colombia")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+***
+```{r,echo=FALSE}
+  Male_age %>%
+  filter(Country=="Dominican Republic")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+
+Male Participants - Age 2
+======================================================== 
+title:False
+```{r,echo=FALSE}
+  Male_age %>%
+  filter(Country=="Guatemala")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+***
+```{r,echo=FALSE}
+  Male_age %>%
+  filter(Country=="Congo Democratic Republic")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+
+
+Male Participants - Age 3
+======================================================== 
+title: False
+```{r,echo=FALSE}
+  Male_age %>%
+  filter(Country=="Chad")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+***
+```{r,echo=FALSE}
+  Male_age %>%
+  filter(Country=="Afghanistan")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+
+Male Participants - Age 4
+======================================================== 
+title: False
+
+  If you look at the male participants, you will see that most of the countries have higher violence value in the age 15-24, so  here, we can say the exceptions; Ukraine, Albania and Kyrgyz Republic. 
+
+  Doesn't it sound so wrong?
+
+Male Participants - Education
+======================================================== 
+
+```{r,echo=FALSE}
+  Male_education %>%
+  filter(Country=="Colombia")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+```{r,echo=FALSE}
+  Male_education %>%
+  filter(Country=="Dominican Republic")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+
+Male Participants - Education 2
+======================================================== 
+title:False
+```{r,echo=FALSE}
+  Male_education %>%
+  filter(Country=="Guatemala")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+***
+```{r,echo=FALSE}
+  Male_education %>%
+  filter(Country=="Congo Democratic Republic")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+
+
+Male Participants - Education 3
+======================================================== 
+title:False
+```{r,echo=FALSE}
+  Male_education %>%
+  filter(Country=="Chad")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+***
+```{r,echo=FALSE}
+  Male_education %>%
+  filter(Country=="Afghanistan")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+
+
+Male Participants - Education 4
+======================================================== 
+title:False
+
+  For Male participants, for Azerbaijan, Kyrgyz Republic, Ukraine and Moldova, there exist only the participants with higher and secondary educations. 
+  
+  We may see that participants from Timor-Leste and Kyrgyz Republic are more violent in higher education. Also Ukraine and Azerbaijan have the smallest difference between higher educated participants and non educated ones. 
+  
+  Did your brain just blow up? Well, education has no impact of some people...
+
+Male Participants - Employment
+======================================================== 
+```{r,echo=FALSE}
+  Male_Employment %>%
+  filter(Country=="Colombia")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+***
+```{r,echo=FALSE}
+  Male_Employment %>%
+  filter(Country=="Dominican Republic")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+
+Male Participants - Employment 2
+======================================================== 
+title: False
+```{r,echo=FALSE}
+  Male_Employment %>%
+  filter(Country=="Guatemala")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+***
+```{r,echo=FALSE}
+  Male_Employment %>%
+  filter(Country=="Congo Democratic Republic")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+
+
+Male Participants - Employment 3
+======================================================== 
+title:False
+```{r,echo=FALSE}
+  Male_Employment %>%
+  filter(Country=="Chad")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+***
+```{r,echo=FALSE}
+  Male_Employment %>%
+  filter(Country=="Afghanistan")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+
+
+Male Participants - Employment 4
+======================================================== 
+title:False
+
+  For male participants,except for Kyrgyz Republic, Timor-Leste and Azerbaijan participants who employed for kind justify violence the most. 
+
+  But in Kyrgyz Republic, Timor-Leste and Azerbaijan, employed for cash participants justify the most. Also for Dominican Republic, there is no data for employed people.
+
+  What should we understand from here? 
+
+  Something like, even though they are employed they found a reason to show violence,and the unemployed ones think that they already have a reason to be violent. 
+
+Male Participants - Marital Status
+======================================================== 
+```{r,echo=FALSE}
+  Male_Marital %>%
+  filter(Country=="Colombia")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+***
+```{r,echo=FALSE}
+  Male_Marital %>%
+  filter(Country=="Dominican Republic")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+
+Male Participants - Marital Status 2
+======================================================== 
+title:False
+```{r,echo=FALSE}
+  Male_Marital %>%
+  filter(Country=="Guatemala")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+***
+```{r,echo=FALSE}
+  Male_Marital %>%
+  filter(Country=="Congo Democratic Republic")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+
+Male Participants - Marital Status 3
+======================================================== 
+title: False
+```{r,echo=FALSE}
+  Male_Marital %>%
+  filter(Country=="Chad")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+***
+```{r,echo=FALSE}
+  Male_Marital %>%
+  filter(Country=="Afghanistan")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+
+Male Participants - Marital Status 4
+======================================================== 
+title: False
+
+  For male participants, Comoros, Azerbaijan, Benin, Eswatini, Zambia, Zimbabwe  have the most violent thoughts in the never married men...
+
+  Even though Dominican Republic has the lowest values in the survey, never married men in this country justify violence more then married and divorced/widow men.
+  
+  Have you ever noticied that the thoughts of women and men in the same countries have almost the same graphs with close values?
+  
+  Just think about that...
+
+
+
+Male Participants - Residence
+======================================================== 
+
+```{r,echo=FALSE}
+  Male_Residence %>%
+  filter(Country=="Colombia")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+***
+```{r,echo=FALSE}
+  Male_Residence %>%
+  filter(Country=="Dominican Republic")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+
+Male Participants - Residence 2
+======================================================== 
+title:False
+```{r,echo=FALSE}
+  Male_Residence %>%
+  filter(Country=="Guatemala")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+***
+```{r,echo=FALSE}
+  Male_Residence %>%
+  filter(Country=="Congo Democratic Republic")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+
+
+Male Participants - Residence 3
+======================================================== 
+title:False
+```{r,echo=FALSE}
+  Male_Residence %>%
+  filter(Country=="Chad")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+***
+```{r,echo=FALSE}
+  Male_Residence %>%
+  filter(Country=="Afghanistan")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+```
+
+Take A Deep Breath Now.
+======================================================== 
+
+  If you look close enough, you can see that all informations are connected, in urban, there are more people with education, more employments, age intervals mostly around 20-40 and so on. 
+  
+  If you look at one country at a time, you may see the relationships better. So let's try with Turkey.
+
+  Lets look at our Turkey data.
+
+
+Female Participants - Turkey -Age/Education
+======================================================== 
+```{r,echo=FALSE}
+ Turkey_age<- Female_age %>%
+  filter(Country=="Turkey")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+  print(Turkey_age)
+```
+***
+```{r,echo=FALSE}
+  Turkey_Education<-Female_education %>%
+  filter(Country=="Turkey")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+  print(Turkey_Education)
+```
+
+Female Participants - Turkey - Age/Education 2
+======================================================== 
+title:False
+If we examine the Turkey data, some deductions may be done (Even though male datas are lacking).
+
+Ages:
+
+- In 2013, over 15% of women between the ages of 35 and 49 and over 10% of women between the ages of 15 and 24 justifies the violence for at least one specific reason.
+- In every question, elder women have the highest values.
+
+Education:
+
+- Let's only focus on "no education" and "primary" to see the importance of having an education. In every category, values of females who have no education doubles the values of females who have at least primary education.
+- Also it is obvious that the higher education status a women have, the less her probability of justifying the action of violence.
+
+
+Female Participants - Turkey -Employement/Marital Status
+======================================================== 
+```{r,echo=FALSE}
+ Turkey_Employment<- Female_Employment %>%
+  filter(Country=="Turkey")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+  print(Turkey_Employment)
+```
+***
+```{r,echo=FALSE}
+  Turkey_Marital<-Female_Marital %>%
+  filter(Country=="Turkey")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+  print(Turkey_Marital)
+```
+
+
+Female Participants - Turkey -Employment/Marital Status 2
+======================================================== 
+title:False 
+
+Marital Status:
+
+- It is interesting to see that women married or living together and women widowed/divorced/separated have the similar percentages in most of the questions. However, women who never married are less tolerated when it comes to violence against them. Whether it is love or hate, it is a FAMILY which is easy to mess up but hard to form.(?)
+
+Female Participants - Turkey - Residence
+======================================================== 
+```{r,echo=FALSE}
+ Turkey_Residence<- Female_Residence %>%
+  filter(Country=="Turkey")%>%
+  ggplot(aes(x=Question, y=Value, fill=Demographics.Response))+
+  geom_bar(position="dodge", stat = "Identity")+
+  coord_flip()
+  print(Turkey_Residence)
+```
+
+Female Participants - Turkey - Residence 2
+======================================================== 
+title:False
+
+Residence:
+
+- Similar to the education part, women living in rural areas are two times more likely to accept the violence comparing to the women living in urban areas.
+
+Those were concluded from datas of females. Since we have no male datas, we would want you to imagine the missing values of males by looking at those;
+
+
+Turkey
+======================================================== 
+title: False
+
+- Femicides, which means the gender-based murder of a woman by a man, had increased by 1400 percent from 2002 to 2009 and that while 66 women were killed in 2002, this number reached 953 in the first 7 months of 2009. [See link](https://www.ntv.com.tr/yasam/kadin-cinayetleri-yuzde-1400-artis-gosterdi,8aPXnckeN0aWmKBDjlezJw)
+
+Turkey 2
+======================================================== 
+title: False
+
+- If we consider the year 2018, it is worse than 2020. 440 women were killed and 317 women were subjected to sexual violence.
+
+```{r,echo=FALSE}
+type <- c("Husband","Boyfriend/Flirt","Someone Familiar","Ex-Husband","Son","Father","Relative","Ex-Boyfriend","Brother","Unknown Person")
+values <- c(97,54,38,21,18,17,16,8,5,3)
+df <- tibble(type,values)
+df %>%
+  mutate(type = fct_reorder(type, values)) %>%
+  ggplot(aes(x=type,y=values))+
+  
+  geom_bar(position="dodge", stat = "Identity", fill="#f68060")+
+  coord_flip()+
+  labs(y="Numbers of female were killed by her --",x=" ",title="Who?")+
+  theme(panel.background = element_blank())
+```
+***
+```{r,echo=FALSE}
+type <- c("Home","Middle of the street","Workplace","Terrain","Car","Hotel","Isolated place","Wood store","Hairdresser")
+values <- c(181,48,15,14,11,5,4,1,1)
+df <- tibble(type,values)
+df %>%
+  mutate(type = fct_reorder(type, values)) %>%
+  ggplot(aes(x=type,y=values))+
+  
+  geom_bar(position="dodge", stat = "Identity", fill="red4")+
+  coord_flip()+
+  labs(y="Numbers of female were killed in --",x=" ",title="Where?")+
+  theme(panel.background = element_blank())
+```
+
+Turkey 2
+======================================================== 
+title: False
+
+```{r,echo=FALSE}
+type <- c("Gun","Cutter","Choking","Beating","Burning","Chemical","Falling from Height")
+values <- c(170,83,26,10,2,1,1)
+df <- tibble(type,values)
+df %>%
+  mutate(type = fct_reorder(type, values)) %>%
+  ggplot(aes(x=type,y=values,))+
+  
+  geom_bar(position="dodge", stat = "Identity", fill="black")+
+  geom_text(aes(label=values), vjust=-0.3, size=5)+
+  
+  labs(y="Numbers of female were killed with/by --",x=" ",title="How?")+
+  theme(panel.background = element_blank())
+```
+***
+There is a very serious increase in the number of suspicious female deaths presented as suicide or natural death and the number of women who are found dead suspiciously with the pandemic process. It is necessary to reveal whether women were killed, whether they were killed by accident, whether women were killed on the basis of gender (whether it was femicide), whether they committed suicide or were driven to suicide.
+
+
+References
+======================================================== 
+[Survey](https://data.world/login?next=%2Fmakeovermonday%2F2020w10%2Fworkspace%2Ffile%3Ffilename%3D20200306%2BData%2BInternational%2BWomen%2527s%2BDay%2BViz5%2BLaunch.csv)
+
+[NTV Yaşam - Kadın Cinayetleri](https://www.ntv.com.tr/yasam/kadin-cinayetleri-yuzde-1400-artis-gosterdi,8aPXnckeN0aWmKBDjlezJw)
+
+[Kadın Cinayetlerini Durduracağız Platformu](http://kadincinayetlerinidurduracagiz.net/veriler/2947/kadin-cinayetlerini-durduracagiz-platformu-2020-raporu)
